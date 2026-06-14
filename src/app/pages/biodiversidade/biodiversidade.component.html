@@ -71,7 +71,7 @@
       @for (sp of filtered; track sp.scientific) {
         <div class="species-card" (click)="openSpecies(sp)">
           <div class="sp-img-wrap">
-            <img [src]="sp.image" [alt]="sp.name">
+            <img [src]="sp.imageBig" [alt]="sp.name">
             <div class="sp-type-badge" [class.fauna]="sp.type==='fauna'" [class.flora]="sp.type==='flora'">
               {{ sp.type === 'fauna' ? '🐾 Fauna' : '🌿 Flora' }}
             </div>

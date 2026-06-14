@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SavanaImages } from '../../shared/images.constants';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  readonly imgs = SavanaImages;
+
   facts = [
     { icon: '🌍', value: '20%', label: 'da superfície terrestre coberta por savanas' },
     { icon: '🦁', value: '45%+', label: 'dos mamíferos africanos vivem na savana' },

@@ -1,4 +1,3 @@
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-layer layer1"></div>
@@ -34,7 +33,7 @@
     <div class="hero-visual fade-up delay-3">
       <div class="visual-card">
         <img
-          src=""
+          [src]="imgs.localizacaoSavanas"
           alt="Mapa de distribuição das savanas">
         <div class="map-label">Distribuição Global · Savana/Floresta Sazonal (Aw/Cw)</div>
       </div>
@@ -47,7 +46,6 @@
   </div>
 </section>
 
-<!-- FACTS STRIP -->
 <section class="facts-strip">
   <div class="container facts-grid">
     @for (fact of facts; track fact.label; let i = $index) {
@@ -60,13 +58,12 @@
   </div>
 </section>
 
-<!-- INTRO -->
 <section class="intro-section">
   <div class="container intro-grid">
     <div class="intro-image-wrap">
       <div class="intro-img">
         <img
-          src=""
+          [src]="imgs.savana"
           alt="Savana africana">
       </div>
       <div class="intro-badge">
@@ -109,7 +106,6 @@
   </div>
 </section>
 
-<!-- SECTIONS CARDS -->
 <section class="sections-area">
   <div class="container">
     <div class="sections-header">
@@ -130,7 +126,6 @@
   </div>
 </section>
 
-<!-- TEAM -->
 <section class="team-section">
   <div class="container team-inner">
     <div class="team-text">

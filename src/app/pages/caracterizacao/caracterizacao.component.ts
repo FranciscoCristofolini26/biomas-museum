@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SavanaImages } from '../../shared/images.constants';
 
 @Component({
   selector: 'app-caracterizacao',
@@ -8,7 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './caracterizacao.component.html',
   styleUrls: ['./caracterizacao.component.scss']
 })
+
 export class CaracterizacaoComponent {
+  readonly imgs = SavanaImages;
+  
   climaItems = [
     { icon: '☀️', label: 'Tipo Climático', value: 'Tropical Sazonal (Aw/Cw)', detail: 'Duas estações bem definidas: uma chuvosa e outra seca. A sazonalidade é a principal característica do clima.' },
     { icon: '🌡️', label: 'Temperatura Média', value: '20°C – 30°C', detail: 'Temperaturas altas o ano todo, com maior variação diária do que anual. Noites podem ser frescas na estação seca.' },

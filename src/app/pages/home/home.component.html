@@ -1,0 +1,150 @@
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-layer layer1"></div>
+    <div class="hero-layer layer2"></div>
+    <div class="hero-layer layer3"></div>
+    <div class="floating-items">
+      <span class="fi fi1">🌾</span>
+      <span class="fi fi2">🦒</span>
+      <span class="fi fi3">🌿</span>
+      <span class="fi fi4">🌾</span>
+      <span class="fi fi5">☀️</span>
+    </div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-text fade-up delay-1">
+      <span class="section-label">Museu Virtual · Ensino Médio 3ª Série</span>
+      <h1 class="hero-title">
+        Savana<br>
+        <em>Floresta</em>
+        Sazonal
+      </h1>
+      <p class="hero-desc">
+        Vastas planícies com gramíneas, árvores esparsas e estações bem definidas.
+        Um bioma de extremos que abriga a maior diversidade de grandes mamíferos do planeta.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/caracterizacao" class="btn btn-primary">Explorar Bioma →</a>
+        <a routerLink="/quiz" class="btn btn-outline hero-quiz-btn">🎮 Jogar Quiz</a>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up delay-3">
+      <div class="visual-card">
+        <img
+          src=""
+          alt="Mapa de distribuição das savanas">
+        <div class="map-label">Distribuição Global · Savana/Floresta Sazonal (Aw/Cw)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Rolar para explorar</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- FACTS STRIP -->
+<section class="facts-strip">
+  <div class="container facts-grid">
+    @for (fact of facts; track fact.label; let i = $index) {
+      <div class="fact-card fade-up" [class]="'delay-' + (i + 1)">
+        <span class="fact-icon">{{ fact.icon }}</span>
+        <strong class="fact-value">{{ fact.value }}</strong>
+        <p class="fact-label">{{ fact.label }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="container intro-grid">
+    <div class="intro-image-wrap">
+      <div class="intro-img">
+        <img
+          src=""
+          alt="Savana africana">
+      </div>
+      <div class="intro-badge">
+        <span>🦁</span>
+        <div>
+          <strong>Bioma Estudado</strong>
+          <span>Savana · Floresta Sazonal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-text">
+      <span class="section-label">Apresentação</span>
+      <h2 class="section-title">A Planície <em>Dourada</em> do Mundo</h2>
+      <p>
+        A <strong>Savana</strong> é um bioma tropical e subtropical caracterizado por uma cobertura
+        contínua de gramíneas intercalada com árvores e arbustos esparsos. Ocorre em regiões
+        com estações bem definidas — uma chuvosa e outra seca —, o que dita o ritmo de toda a vida.
+      </p>
+      <p>
+        Abrangendo cerca de 20% da superfície terrestre, a savana é encontrada principalmente
+        na África Subsaariana (onde é chamada de <em>savana africana</em>), no Brasil (o <strong>Cerrado</strong>),
+        na Austrália e na Ásia. É o lar da maior diversidade de grandes herbívoros e carnívoros do planeta.
+      </p>
+      <div class="intro-highlights">
+        <div class="highlight">
+          <span>🌐</span>
+          <p>Bioma tropical entre 5° e 20° de latitude Norte e Sul</p>
+        </div>
+        <div class="highlight">
+          <span>🔥</span>
+          <p>Queimadas naturais são parte do ciclo ecológico do bioma</p>
+        </div>
+        <div class="highlight">
+          <span>🦒</span>
+          <p>Maior concentração de grandes mamíferos do planeta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTIONS CARDS -->
+<section class="sections-area">
+  <div class="container">
+    <div class="sections-header">
+      <span class="section-label">Conteúdo do Site</span>
+      <h2 class="section-title">Explore o <em>Museu</em></h2>
+    </div>
+    <div class="sections-grid">
+      @for (sec of sections; track sec.path; let i = $index) {
+        <a [routerLink]="sec.path" class="section-card fade-up" [class]="'delay-' + (i + 1)"
+           [style.--card-color]="sec.color">
+          <div class="sc-icon">{{ sec.icon }}</div>
+          <h3>{{ sec.title }}</h3>
+          <p>{{ sec.desc }}</p>
+          <div class="sc-arrow">→</div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="container team-inner">
+    <div class="team-text">
+      <span class="section-label">Equipe</span>
+      <h2 class="section-title">Quem <em>Criou</em> Este Museu</h2>
+      <p>Estudantes da 3ª série do Ensino Médio responsáveis pelo tema <strong>Savana/Floresta Sazonal</strong>.</p>
+    </div>
+    <div class="team-cards">
+      @for (name of ['Francisco', 'Chris', 'Mateus']; track name) {
+        <div class="team-card">
+          <div class="avatar">{{ name[0] }}</div>
+          <span>{{ name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

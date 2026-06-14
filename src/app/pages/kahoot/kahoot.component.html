@@ -1,0 +1,52 @@
+<div class="page-hero quiz-hero">
+  <div class="container">
+    <span class="section-label">Capítulo 04</span>
+    <h1 class="section-title" style="color:var(--white)">Quiz <em>Interativo</em></h1>
+    <p style="color:rgba(255,240,180,0.85); max-width:560px; font-size:1.05rem">
+      Teste seus conhecimentos sobre a Savana e o Cerrado com 10 questões elaboradas
+      a partir do conteúdo deste site!
+    </p>
+  </div>
+</div>
+
+<section class="quiz-section">
+  <div class="container">
+    <div class="quiz-controls">
+      <h2 class="section-title">Jogar no <em>Kahoot</em></h2>
+      <p class="quiz-intro">O quiz está disponível no Kahoot! Jogue diretamente aqui pelo embed ou acesse a plataforma Kahoot.</p>
+
+      <div class="quiz-actions">
+        <button class="btn btn-gold" (click)="loadDefaultKahoot()">▶ Abrir Quiz aqui</button>
+        <button class="btn btn-outline" (click)="openKahootDirect()">🔗 Abrir no Kahoot</button>
+      </div>
+    </div>
+
+    @if (kahootUrl()) {
+      <div class="iframe-wrapper">
+        <div class="iframe-bar">
+          <span class="iframe-dot red"></span>
+          <span class="iframe-dot yellow"></span>
+          <span class="iframe-dot green"></span>
+          <span class="iframe-title">Kahoot! — Savana/Floresta Sazonal</span>
+        </div>
+        @if (!iframeLoaded()) {
+          <div class="iframe-loading">
+            <div class="loading-spinner"></div>
+            <p>Carregando o Kahoot...</p>
+          </div>
+        }
+        <iframe [src]="kahootUrl()" (load)="onIframeLoad()" width="100%" height="600"
+          frameborder="0" allow="microphone; camera"
+          title="Quiz Kahoot — Savana" allowfullscreen></iframe>
+      </div>
+    } @else {
+      <div class="kahoot-placeholder">
+        <div class="placeholder-icon">🎮</div>
+        <h3>Pronto para o desafio?</h3>
+        <p>Clique em <strong>"Abrir Quiz aqui"</strong> para iniciar o jogo incorporado,<br>
+        ou em <strong>"Abrir no Kahoot"</strong> para acessar a plataforma diretamente.</p>
+        <button class="btn btn-gold" (click)="loadDefaultKahoot()">▶ Começar Quiz</button>
+      </div>
+    }
+  </div>
+</section>

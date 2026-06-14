@@ -1,0 +1,121 @@
+<div class="page-hero bio-hero">
+  <div class="container">
+    <span class="section-label">Capítulo 02</span>
+    <h1 class="section-title" style="color:var(--white)">Biodiversidade do <em>Bioma</em></h1>
+    <p style="color:rgba(240,208,128,0.85); max-width:560px; font-size:1.05rem">
+      Flora, fauna, adaptações extraordinárias e espécies que tornam a Savana
+      o reino dos grandes animais e das gramíneas resistentes.
+    </p>
+  </div>
+</div>
+
+<section class="section-block">
+  <div class="container">
+    <span class="section-label">Panorama Geral</span>
+    <h2 class="section-title">A Riqueza da <em>Vida</em></h2>
+    <div class="panorama-grid">
+      <div class="pan-text">
+        <p>A savana é o bioma dos <strong>extremos e das adaptações espetaculares</strong>. A alternância entre estação chuvosa e seca exige que plantas e animais desenvolvam estratégias únicas de sobrevivência — migração, dormência, armazenamento de água e resistência ao fogo.</p>
+        <p>A vegetação é dominada por gramíneas contínuas com árvores esparsas. Essa abertura é o que permite as grandes migrações e a coexistência de dezenas de espécies de grandes herbívoros em um mesmo espaço.</p>
+      </div>
+      <div class="pan-stats">
+        <div class="stat-big"><strong>80+</strong><span>espécies de grandes mamíferos na savana africana</span></div>
+        <div class="stat-big"><strong>10.000+</strong><span>espécies de plantas só no Cerrado brasileiro</span></div>
+        <div class="stat-big"><strong>5%</strong><span>da biodiversidade mundial no Cerrado — hotspot global</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block alt-bg">
+  <div class="container">
+    <span class="section-label">Adaptações ao Ambiente</span>
+    <h2 class="section-title">Como os Organismos <em>Sobrevivem</em></h2>
+    <div class="adaptacoes-grid">
+      <div class="adap-card">
+        <div class="adap-icon">🔥</div>
+        <h3>Resistência ao Fogo</h3>
+        <p>Cascas grossas em árvores como baobá e pequizeiro. Xilopódios (órgãos subterrâneos) que protegem gemas de crescimento. Gramíneas que rebrota em dias após o fogo.</p>
+      </div>
+      <div class="adap-card">
+        <div class="adap-icon">💧</div>
+        <h3>Tolerância à Seca</h3>
+        <p>Folhas pequenas ou caducas para reduzir transpiração. Raízes profundas que acessam água subterrânea. Animais que migram seguindo as chuvas ou entram em torpor.</p>
+      </div>
+      <div class="adap-card">
+        <div class="adap-icon">🦁</div>
+        <h3>Caça e Camuflagem</h3>
+        <p>Pelagens douradas e listradas que se confundem com gramíneas. Visão aguçada e velocidade para predadores. Vida em grupos para defesa coletiva nos herbívoros.</p>
+      </div>
+      <div class="adap-card">
+        <div class="adap-icon">🌡️</div>
+        <h3>Termorregulação</h3>
+        <p>Orelhas grandes como dissipadores de calor (elefante, raposa do deserto). Atividade crepuscular e noturna para evitar o calor do meio-dia. Suor e ofegância intensos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="container">
+    <span class="section-label">Espécies em Destaque</span>
+    <h2 class="section-title">Fauna e <em>Flora</em> do Bioma</h2>
+
+    <div class="filter-tabs">
+      <button class="filter-btn" [class.active]="activeFilter()==='all'" (click)="setFilter('all')">Todas ({{ species.length }})</button>
+      <button class="filter-btn" [class.active]="activeFilter()==='fauna'" (click)="setFilter('fauna')">🐾 Fauna (5)</button>
+      <button class="filter-btn" [class.active]="activeFilter()==='flora'" (click)="setFilter('flora')">🌿 Flora (5)</button>
+    </div>
+
+    <div class="species-grid">
+      @for (sp of filtered; track sp.scientific) {
+        <div class="species-card" (click)="openSpecies(sp)">
+          <div class="sp-img-wrap">
+            <img [src]="sp.image" [alt]="sp.name">
+            <div class="sp-type-badge" [class.fauna]="sp.type==='fauna'" [class.flora]="sp.type==='flora'">
+              {{ sp.type === 'fauna' ? '🐾 Fauna' : '🌿 Flora' }}
+            </div>
+          </div>
+          <div class="sp-body">
+            <h4>{{ sp.name }}</h4>
+            <em class="sp-scientific">{{ sp.scientific }}</em>
+            <div class="sp-tags">
+              @if (sp.native) { <span class="tag native">Nativa</span> }
+              @if (sp.endemic) { <span class="tag endemic">Endêmica</span> }
+            </div>
+            <p class="sp-preview">{{ sp.adaptation | slice:0:80 }}...</p>
+            <button class="sp-details-btn">Ver detalhes →</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+@if (activeSpecies()) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-box" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">✕</button>
+      <div class="modal-img">
+        <img [src]="activeSpecies()!.image" [alt]="activeSpecies()!.name">
+      </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2>{{ activeSpecies()!.name }}</h2>
+            <em class="modal-scientific">{{ activeSpecies()!.scientific }}</em>
+          </div>
+          <div class="modal-tags">
+            @if (activeSpecies()!.native) { <span class="tag native">Nativa</span> }
+            @if (activeSpecies()!.endemic) { <span class="tag endemic">Endêmica</span> }
+            <span class="tag" [class.fauna]="activeSpecies()!.type==='fauna'" [class.flora]="activeSpecies()!.type==='flora'">
+              {{ activeSpecies()!.type === 'fauna' ? '🐾 Fauna' : '🌿 Flora' }}
+            </span>
+          </div>
+        </div>
+        <div class="modal-section"><h4>🔬 Adaptação ao Ambiente</h4><p>{{ activeSpecies()!.adaptation }}</p></div>
+        <div class="modal-section"><h4>🌿 Importância Ecológica</h4><p>{{ activeSpecies()!.ecology }}</p></div>
+      </div>
+    </div>
+  </div>
+}

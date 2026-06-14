@@ -1,0 +1,57 @@
+.footer {
+  background: var(--savana-deep);
+  color: var(--savana-straw);
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.footer-canopy {
+  height: 60px;
+  background: var(--white);
+  clip-path: ellipse(55% 100% at 50% 0%);
+  margin-bottom: -1px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 48px;
+  padding: 56px 32px 40px;
+  @media (max-width: 768px) { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.footer-brand {
+  .footer-icon { font-size: 2.4rem; display: block; margin-bottom: 12px; }
+  h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  p { font-size: 0.88rem; color: rgba(240,208,128,0.7); line-height: 1.6; }
+}
+
+.footer-nav {
+  h4 { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--savana-amber); margin-bottom: 16px; }
+  ul { list-style: none; }
+  li { margin-bottom: 8px; }
+  a { font-size: 0.9rem; color: rgba(240,208,128,0.75); transition: color var(--transition); &:hover { color: var(--white); } }
+}
+
+.footer-biome {
+  h4 { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--savana-amber); margin-bottom: 16px; }
+}
+
+.biome-badge {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(201,146,42,0.15); border: 1px solid rgba(201,146,42,0.3);
+  border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 16px;
+  .badge-icon { font-size: 2rem; }
+  div { display: flex; flex-direction: column; gap: 2px; strong { color: var(--white); font-size: 0.9rem; } span { font-size: 0.78rem; color: var(--savana-amber); font-family: var(--font-mono); } }
+}
+
+.footer-note { font-size: 0.78rem; color: rgba(240,208,128,0.5); font-style: italic; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(201,146,42,0.2);
+  padding: 20px 32px;
+  .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; @media (max-width: 600px) { flex-direction: column; text-align: center; } }
+  p { font-size: 0.78rem; color: rgba(240,208,128,0.5); }
+  .footer-refs { font-family: var(--font-mono); font-size: 0.7rem; }
+}

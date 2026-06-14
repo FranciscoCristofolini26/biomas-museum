@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="footer-canopy"></div>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="footer-icon">🌾</span>
+      <h3>Museu Virtual dos Biomas do Mundo</h3>
+      <p>Um projeto educacional da 3ª série do Ensino Médio, explorando a biodiversidade e ecossistemas do planeta.</p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Navegação</h4>
+      <ul>
+        @for (link of links; track link.path) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer-biome">
+      <h4>Bioma em foco</h4>
+      <div class="biome-badge">
+        <span class="badge-icon">🦁</span>
+        <div>
+          <strong>Savana/Floresta Sazonal</strong>
+          <span>Francisco · Chris · Mateus</span>
+        </div>
+      </div>
+      <p class="footer-note">Projeto educacional — conteúdo criado com base em fontes científicas confiáveis.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© {{ year }} Museu Virtual dos Biomas · Ensino Médio 3ª Série</p>
+      <p class="footer-refs">Fontes: WWF, IBGE, Britannica, SciELO, National Geographic</p>
+    </div>
+  </div>
+</footer>

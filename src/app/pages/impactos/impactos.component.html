@@ -1,0 +1,81 @@
+<div class="page-hero imp-hero">
+  <div class="container">
+    <span class="section-label">Capítulo 03</span>
+    <h1 class="section-title" style="color:var(--white)">Relação com o Ser Humano e <em>Impactos Ambientais</em></h1>
+    <p style="color:rgba(255,220,180,0.85); max-width:560px; font-size:1.05rem">
+      Como as atividades humanas afetam a Savana e o Cerrado — e quais estratégias
+      podem garantir sua conservação para as próximas gerações.
+    </p>
+  </div>
+</div>
+
+<section class="section-block">
+  <div class="container">
+    <span class="section-label">Uso Econômico</span>
+    <h2 class="section-title">Formas de <em>Ocupação</em> Humana</h2>
+    <p class="section-desc">A savana e o Cerrado são explorados economicamente de diversas formas. O Brasil transformou o Cerrado no maior produtor de soja do mundo — ao custo de metade de sua cobertura original.</p>
+    <div class="usos-grid">
+      @for (uso of usos; track uso.title) {
+        <div class="uso-card">
+          <span class="uso-icon">{{ uso.icon }}</span>
+          <h3>{{ uso.title }}</h3>
+          <p>{{ uso.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section-block alt-bg">
+  <div class="container">
+    <span class="section-label">Consequências Ecológicas</span>
+    <h2 class="section-title">Os <em>Impactos</em> do Desmatamento</h2>
+    <div class="impactos-list">
+      @for (imp of impactos; track imp.title) {
+        <div class="impacto-item">
+          <div class="impacto-stat">
+            <strong>{{ imp.stat }}</strong>
+            <span>{{ imp.statLabel }}</span>
+          </div>
+          <div class="impacto-divider"></div>
+          <div class="impacto-content">
+            <h3>{{ imp.title }}</h3>
+            <p>{{ imp.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="alert-section">
+  <div class="container alert-inner">
+    <div class="alert-icon">⚠️</div>
+    <div>
+      <h3>O Cerrado: o bioma "esquecido"</h3>
+      <p>
+        Enquanto o desmatamento da Amazônia recebe atenção global, o Cerrado perde proporcionalmente
+        <strong>mais floresta a cada ano</strong>. Com apenas <strong>8,5% de área legalmente protegida</strong>
+        (vs. 44% da Amazônia), o Cerrado é considerado o bioma <em>mais ameaçado do Brasil</em> — e
+        um dos hotspots de biodiversidade mais urgentes do planeta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="container">
+    <span class="section-label">Estratégias de Conservação</span>
+    <h2 class="section-title">Como <em>Proteger</em> a Savana</h2>
+    <p class="section-desc">A conservação da savana exige uma combinação de políticas públicas, ciência, comunidades locais e cooperação internacional.</p>
+    <div class="conservacao-grid">
+      @for (item of conservacao; track item.title) {
+        <div class="conservacao-card">
+          <span class="conservacao-icon">{{ item.icon }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

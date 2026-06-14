@@ -1,0 +1,126 @@
+<div class="page-hero" style="background: linear-gradient(135deg, #2c1a00 0%, #5c3a1e 60%, #8b5e2a 100%)">
+  <div class="container">
+    <span class="section-label">Capítulo 01</span>
+    <h1 class="section-title" style="color:var(--white)">Caracterização do <em>Bioma</em></h1>
+    <p style="color:rgba(240,208,128,0.85); max-width:560px; font-size:1.05rem">
+      Aspectos físicos, climáticos, geográficos e estruturais da Savana —
+      um bioma definido pela sazonalidade e pela convivência com o fogo.
+    </p>
+  </div>
+</div>
+
+<section class="section-block">
+  <div class="container">
+    <span class="section-label">Localização Geográfica</span>
+    <h2 class="section-title">Onde fica a <em>Savana?</em></h2>
+    <p class="section-desc">
+      As savanas ocorrem em faixas tropicais entre aproximadamente 5° e 20° de latitude Norte e Sul,
+      nas zonas de transição entre florestas equatoriais e desertos. Estão presentes em quase todos
+      os continentes, mas é na <strong>África</strong> que atingem maior extensão e diversidade.
+    </p>
+    <div class="locais-grid">
+      @for (local of locais; track local.region) {
+        <div class="local-card">
+          <span class="local-flag">{{ local.flag }}</span>
+          <h3>{{ local.region }}</h3>
+          <p>{{ local.country }}</p>
+          <span class="local-area">{{ local.area }}</span>
+        </div>
+      }
+    </div>
+    <div class="map-container">
+      <img
+        src="https://blogdoenem.com.br/wp-content/uploads/2016/07/111.jpg"
+        alt="Mapa climático mundial">
+      <div class="map-caption">Classificação de Köpen — zonas Aw (tropical chuvoso de savana) e Cw (subtropical de inverno seco)</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block alt-bg">
+  <div class="container">
+    <span class="section-label">Clima</span>
+    <h2 class="section-title">Temperatura e <em>Regime de Chuvas</em></h2>
+    <p class="section-desc">
+      A grande definidora da savana é a <strong>sazonalidade climática</strong>: um período chuvoso
+      que permite explosão de vida, seguido de uma estação seca que força adaptações extremas.
+      Esse pulso anual molda toda a ecologia do bioma.
+    </p>
+    <div class="clima-grid">
+      @for (item of climaItems; track item.label) {
+        <div class="clima-card">
+          <span class="clima-icon">{{ item.icon }}</span>
+          <div>
+            <span class="clima-label">{{ item.label }}</span>
+            <strong class="clima-value">{{ item.value }}</strong>
+            <p class="clima-detail">{{ item.detail }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="container">
+    <span class="section-label">Características do Solo</span>
+    <h2 class="section-title">Um Solo <em>Adaptado ao Fogo</em></h2>
+    <div class="solo-intro">
+      <div class="solo-text">
+        <p>
+          O solo da savana é moldado pelo fogo, pela seca e por uma fauna de engenheiros
+          do solo extremamente ativa — formigas, cupins e minhocas. O Cerrado brasileiro,
+          por exemplo, possui solos com <strong>até 3 metros de profundidade de raízes</strong>,
+          garantindo acesso à água mesmo na estação seca.
+        </p>
+        <p>
+          As queimadas, apesar de destrutivas na superfície, liberam nutrientes acumulados
+          na biomassa morta, renovando a fertilidade superficial e permitindo a rebrota rápida
+          das gramíneas.
+        </p>
+      </div>
+      <div class="solo-visual">
+        <div class="nutrient-cycle">
+          <div class="cycle-step">🔥 Queimada</div>
+          <div class="cycle-arrow">↓ libera nutrientes</div>
+          <div class="cycle-step">🌱 Rebrota Rápida</div>
+          <div class="cycle-arrow">↓ crescimento</div>
+          <div class="cycle-step">🌾 Biomassa Seca</div>
+          <div class="cycle-arrow">↓ acumulação</div>
+        </div>
+      </div>
+    </div>
+    <div class="solo-cards">
+      @for (item of soloItems; track item.title) {
+        <div class="solo-card">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section-block alt-bg">
+  <div class="container">
+    <span class="section-label">Estrutura Vertical</span>
+    <h2 class="section-title">Os <em>Estratos</em> da Savana</h2>
+    <p class="section-desc">
+      Ao contrário da floresta tropical, a savana tem uma estrutura aberta e baixa.
+      O estrato herbáceo domina a paisagem, com árvores emergindo de forma esparsa.
+      Essa abertura permite a locomoção de grandes herbívoros e a visibilidade dos predadores.
+    </p>
+    <div class="estratos-container">
+      @for (estrato of estratos; track estrato.name; let i = $index) {
+        <div class="estrato-item" [class.first]="i===0">
+          <div class="estrato-height">{{ estrato.height }}</div>
+          <div class="estrato-line"></div>
+          <div class="estrato-content">
+            <h4>{{ estrato.name }}</h4>
+            <p>{{ estrato.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

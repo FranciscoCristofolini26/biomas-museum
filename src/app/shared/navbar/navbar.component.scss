@@ -1,0 +1,68 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(44,26,0,0.0);
+  backdrop-filter: blur(0px);
+  transition: all 0.4s ease;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: rgba(44,26,0,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom-color: rgba(201,146,42,0.2);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  }
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 72px;
+}
+
+.brand {
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  .brand-icon { font-size: 1.6rem; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--savana-straw); }
+  .brand-sub { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--savana-amber); }
+}
+
+.nav-links { display: flex; list-style: none; gap: 4px; flex: 1; justify-content: center; }
+
+.nav-link {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem; font-weight: 500;
+  color: rgba(240,208,128,0.8);
+  transition: all var(--transition);
+
+  &:hover, &.active { color: var(--white); background: rgba(201,146,42,0.15); }
+  &.active { color: var(--savana-straw); background: rgba(201,146,42,0.2); }
+}
+
+.quiz-cta { padding: 10px 20px; font-size: 0.82rem; flex-shrink: 0; }
+
+.menu-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px; margin-left: auto;
+  span { display: block; width: 24px; height: 2px; background: var(--savana-straw); transition: all 0.3s ease; border-radius: 2px; }
+  &.open { span:nth-child(1) { transform: translateY(7px) rotate(45deg); } span:nth-child(2) { opacity: 0; } span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } }
+}
+
+.mobile-menu {
+  display: none; flex-direction: column;
+  background: rgba(44,26,0,0.98);
+  border-top: 1px solid rgba(201,146,42,0.2);
+  padding: 12px 0; max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+  &.open { max-height: 400px; }
+  .mobile-link { padding: 14px 32px; color: var(--savana-straw); font-weight: 500; font-size: 1rem; transition: background var(--transition); &:hover { background: rgba(201,146,42,0.1); } }
+}
+
+@media (max-width: 900px) {
+  .nav-links, .quiz-cta { display: none; }
+  .menu-toggle { display: flex; }
+  .mobile-menu { display: flex; }
+}

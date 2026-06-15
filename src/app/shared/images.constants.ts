@@ -11,15 +11,15 @@ export const SavanaImages = {
   elefanteBig: 'images/elefante-big.jpg',
   girafa: 'images/girafa.jpg',
   girafaBig: 'images/girafa-big.jpg',
-  kopen: 'images/kopen.jpg',
+  kopen: 'images/kopen.png',
   leao: 'images/leao.jpg',
   leaoBig: 'images/leao-big.jpg',
   loboGuara: 'images/lobo-guara.jpg',
   loboGuaraBig: 'images/lobo-guara-big.jpg',
-  localizacaoSavanas: 'images/localizacao-savanas.jpg',
+  localizacaoSavanas: 'images/localizacao-savanas.png',
   pequizeiro: 'images/pequizeiro.jpg',
   pequizeiroBig: 'images/pequizeiro-big.jpg',
-  savanaBig: 'images/savana-big.jpg',
+  savana: 'images/savana.png',
   buriti: 'images/buriti.jpg',
   buritiBig: 'images/buriti-big.jpg'
 };

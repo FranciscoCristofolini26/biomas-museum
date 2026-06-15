@@ -96,11 +96,12 @@
   <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-box" (click)="$event.stopPropagation()">
       <button class="modal-close" (click)="closeModal()">✕</button>
-      <div class="modal-img">
-        <img [src]="activeSpecies()!.image" [alt]="activeSpecies()!.name">
-      </div>
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-body">
+        <div class="modal-img">
+          <img [src]="activeSpecies()!.image" [alt]="activeSpecies()!.name">
+        </div>
+        <div class="modal-content">
+          <div class="modal-header">
           <div>
             <h2>{{ activeSpecies()!.name }}</h2>
             <em class="modal-scientific">{{ activeSpecies()!.scientific }}</em>
@@ -118,4 +119,5 @@
       </div>
     </div>
   </div>
+</div>
 }

@@ -13,13 +13,16 @@ export class KahootComponent {
   kahootUrl = signal<SafeResourceUrl | null>(null);
   iframeLoaded = signal(false);
 
-  defaultKahootUrl = 'https://kahoot.it/challenge/01051302?challenge-id=496a675a-49bf-4142-bf55-43f088a984e8_1781452176685';
+  defaultKahootUrl = 'https://kahoot.it/challenge/01856003?challenge-id=a67ad3dc-3170-4ca8-b007-2e50ab2ce82f_1781650112903';
 
   constructor(private sanitizer: DomSanitizer) {}
 
   loadDefaultKahoot() {
-    this.kahootUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(this.defaultKahootUrl));
+    this.kahootUrl.set(null);
     this.iframeLoaded.set(false);
+    setTimeout(() => {
+      this.kahootUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(this.defaultKahootUrl));
+    }, 0);
   }
 
   onIframeLoad() { this.iframeLoaded.set(true); }

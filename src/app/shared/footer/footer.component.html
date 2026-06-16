@@ -11,7 +11,7 @@
       <h4>Navegação</h4>
       <ul>
         @for (link of links; track link.path) {
-          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        <li><a [routerLink]="link.path">{{ link.label }}</a></li>
         }
       </ul>
     </div>
@@ -32,7 +32,12 @@
   <div class="footer-bottom">
     <div class="container">
       <p>© {{ year }} Museu Virtual dos Biomas · Ensino Médio 3ª Série</p>
-      <p class="footer-refs">Fontes: WWF, IBGE, Britannica, SciELO, National Geographic</p>
+      <p class="footer-refs">Fontes:
+        <a href="https://www.britannica.com/science/savanna" target="_blank" rel="noopener noreferrer">Britannica</a>,
+        <a href="https://pt.wikipedia.org/wiki/Savana" target="_blank" rel="noopener noreferrer">Wikipedia</a>,
+        <a href="https://www.infoescola.com/biomas/savanas/" target="_blank" rel="noopener noreferrer">InfoEscola</a>,
+        <a href="https://www.todamateria.com.br/savanas/" target="_blank" rel="noopener noreferrer">Toda Matéria</a>
+      </p>
     </div>
   </div>
 </footer>

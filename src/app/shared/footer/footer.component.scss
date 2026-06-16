@@ -54,4 +54,7 @@
   .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; @media (max-width: 600px) { flex-direction: column; text-align: center; } }
   p { font-size: 0.78rem; color: rgba(240,208,128,0.5); }
   .footer-refs { font-family: var(--font-mono); font-size: 0.7rem; }
+  .footer-refs > a:hover {
+    color: rgb(172, 157, 134)
+  }
 }

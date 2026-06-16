@@ -16,7 +16,9 @@
       <p class="quiz-intro">O quiz está disponível no Kahoot! Jogue diretamente aqui pelo embed ou acesse a plataforma Kahoot.</p>
 
       <div class="quiz-actions">
-        <button class="btn btn-gold" (click)="loadDefaultKahoot()">▶ Abrir Quiz aqui</button>
+        <button [class]="kahootUrl() ? 'btn btn-outline' : 'btn btn-gold'" (click)="loadDefaultKahoot()">
+          {{ kahootUrl() ? '🔄 Refazer Quiz' : '▶ Abrir Quiz aqui' }}
+        </button>
         <button class="btn btn-outline" (click)="openKahootDirect()">🔗 Abrir no Kahoot</button>
       </div>
     </div>

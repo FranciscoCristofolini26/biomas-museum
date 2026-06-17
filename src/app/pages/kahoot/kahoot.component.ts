@@ -13,7 +13,7 @@ export class KahootComponent {
   kahootUrl = signal<SafeResourceUrl | null>(null);
   iframeLoaded = signal(false);
 
-  defaultKahootUrl = 'https://kahoot.it/challenge/01856003?challenge-id=a67ad3dc-3170-4ca8-b007-2e50ab2ce82f_1781650112903';
+  defaultKahootUrl = 'https://kahoot.it/challenge/02505575?challenge-id=a67ad3dc-3170-4ca8-b007-2e50ab2ce82f_1781650246075';
 
   constructor(private sanitizer: DomSanitizer) {}
 
